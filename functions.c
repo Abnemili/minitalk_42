@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_i_d.c                                     :+:      :+:    :+:   */
+/*   functions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mloudifa <mloudifa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 15:36:47 by mloudifa          #+#    #+#             */
-/*   Updated: 2024/06/29 15:39:40 by mloudifa         ###   ########.fr       */
+/*   Created: 2025/03/27 20:37:34 by abnemili          #+#    #+#             */
+/*   Updated: 2025/03/27 21:21:37 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minitalk.h"
+#include "minitalk.h"
 
-int	ft_print_c(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int	ft_print_i_d(int nb)
+int	ft_print_id(int nb)
 {
 	int	i;
 
@@ -30,17 +30,32 @@ int	ft_print_i_d(int nb)
 	}
 	if (nb < 0)
 	{
-		i += ft_print_c('-');
+		i += ft_putchar('-');
 		nb = -nb;
 	}
 	if (nb > 9)
 	{
-		i += ft_print_i_d(nb / 10);
-		i += ft_print_i_d(nb % 10);
+		i += ft_print_id(nb / 10);
+		i += ft_print_id(nb % 10);
 	}
 	else
 	{
-		i += ft_print_c(48 + nb);
+		i += ft_putchar(48 + nb);
 	}
 	return (i);
+}
+
+int	is_valide(char *av)
+{
+	int	i;
+
+	i = 0;
+	while (av[i])
+	{
+		if (av[i] >= '0' && av[i] <= '9')
+			i++;
+		else
+			return (0);
+	}
+	return (1);
 }

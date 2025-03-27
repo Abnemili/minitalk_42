@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mloudifa <mloudifa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 12:28:06 by mloudifa          #+#    #+#             */
-/*   Updated: 2024/06/21 14:46:03 by mloudifa         ###   ########.fr       */
+/*   Created: 2025/03/27 21:00:02 by abnemili          #+#    #+#             */
+/*   Updated: 2025/03/27 21:21:49 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minitalk.h"
+#include "minitalk.h"
 
 static long long	spaces_len(const char *nptr)
 {

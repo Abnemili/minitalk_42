@@ -3,30 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mloudifa <mloudifa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 12:33:51 by mloudifa          #+#    #+#             */
-/*   Updated: 2024/06/29 15:34:57 by mloudifa         ###   ########.fr       */
+/*   Created: 2025/03/27 20:40:30 by abnemili          #+#    #+#             */
+/*   Updated: 2025/03/27 20:50:58 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minitalk.h"
-#include <unistd.h>
+#include "minitalk.h"
 
-void	send_msg(int pid, char c)
+void	send_msg(int pid, char byte)
 {
-	int	i;
+	int	x;
 
-	i = 8;
-	while (i > 0)
+	x = 8;
+	while (x > 0)
 	{
-		if (c & 1)
+		if (byte & 1)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		c >>= 1;
-		usleep(200);
-		i--;
+		byte >>= 1;
+		usleep(230);
+		x--;
 	}
 }
 
@@ -35,7 +34,7 @@ int	main(int argc, char **argv)
 	int	pid;
 	int	i;
 
-	if (argc != 3 || parsing(argv[1]) == 0 || argv[1][0] == '0')
+	if (argc != 3 || is_valide(argv[1]) == 0 || argv[1][0] == '0')
 	{
 		write(1, "\033[1;31m", 8);
 		write(1, "Usage!: ./client [PID_SERVER] [STRING_TO_PASS]\n\033[0m", 52);

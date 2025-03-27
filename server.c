@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mloudifa <mloudifa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 12:33:56 by mloudifa          #+#    #+#             */
-/*   Updated: 2024/06/29 15:47:57 by mloudifa         ###   ########.fr       */
+/*   Created: 2025/03/27 20:40:59 by abnemili          #+#    #+#             */
+/*   Updated: 2025/03/27 21:21:44 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/minitalk.h"
+#include "minitalk.h"
 
 void	handle_msg(int signal)
 {
@@ -45,7 +45,7 @@ int	main(void)
 
 	pid = getpid();
 	write(1, "\033[1;32m", 8);
-	ft_print_i_d(pid);
+	ft_print_id(pid);
 	write(1, "\n", 1);
 	write(1, "\033[1;33mwaiting for the message....\n\033[0m", 40);
 	signal(SIGUSR1, handle_msg);

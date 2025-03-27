@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mloudifa <mloudifa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abnemili <abnemili@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 12:30:59 by mloudifa          #+#    #+#             */
-/*   Updated: 2024/06/29 15:37:30 by mloudifa         ###   ########.fr       */
+/*   Created: 2025/03/27 20:38:14 by abnemili          #+#    #+#             */
+/*   Updated: 2025/03/27 20:38:56 by abnemili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 
 long long	ft_atoi(char *nptr);
-int			ft_print_i_d(int nb);
-int			parsing(char *av);
+int			ft_print_id(int nb);
+int			is_valide(char *av);
 
 #endif
